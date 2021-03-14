@@ -58,6 +58,8 @@ func (handler *FeedHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	log.Info("Waiting for 5 seconds before startup")
+	time.Sleep(5 * time.Second)
 	pubURL := os.Getenv("OSSMALWARE_TOPIC_URL")
 	var pub publisher.Publisher
 	var err error
@@ -66,7 +68,7 @@ func main() {
 	} else {
 		pub, err = publisher.NewPubSub(context.TODO(), pubURL)
 		if err != nil {
-			log.Fatalf("error creating gcp pubsub topic with url %q: %v", pubURL, err)
+			log.Fatalf("error creating pubsub topic with url %q: %v", pubURL, err)
 		}
 	}
 	log.Infof("using %q publisher", pub.Name())

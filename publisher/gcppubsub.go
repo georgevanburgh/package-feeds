@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"gocloud.dev/pubsub"
-	_ "gocloud.dev/pubsub/gcppubsub"
+	_ "gocloud.dev/pubsub/kafkapubsub"
 )
 
 type PubSub struct {
