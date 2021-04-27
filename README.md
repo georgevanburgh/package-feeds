@@ -30,9 +30,9 @@ A YAML configuration file can be provided with the following format:
 enabled_feeds:
 - pypi
 - npm
-- goproxy
-- rubygems
-- crates
+- golang
+- gem
+- cargo
 
 publisher:
   type: 'gcp_pubsub'

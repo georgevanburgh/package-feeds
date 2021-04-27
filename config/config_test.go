@@ -12,8 +12,8 @@ import (
 const (
 	TestConfigStr = `
 enabled_feeds:
-- rubygems
-- goproxy
+- gem
+- golang
 - npm
 
 publisher:

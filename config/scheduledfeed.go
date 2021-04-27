@@ -10,13 +10,13 @@ import (
 	"strconv"
 
 	"github.com/ossf/package-feeds/feeds"
-	"github.com/ossf/package-feeds/feeds/crates"
-	"github.com/ossf/package-feeds/feeds/goproxy"
+	"github.com/ossf/package-feeds/feeds/cargo"
+	"github.com/ossf/package-feeds/feeds/composer"
+	"github.com/ossf/package-feeds/feeds/gem"
+	"github.com/ossf/package-feeds/feeds/golang"
 	"github.com/ossf/package-feeds/feeds/npm"
 	"github.com/ossf/package-feeds/feeds/nuget"
-	"github.com/ossf/package-feeds/feeds/packagist"
 	"github.com/ossf/package-feeds/feeds/pypi"
-	"github.com/ossf/package-feeds/feeds/rubygems"
 	"github.com/ossf/package-feeds/publisher"
 	"github.com/ossf/package-feeds/publisher/gcppubsub"
 	"github.com/ossf/package-feeds/publisher/kafkapubsub"
@@ -80,20 +80,20 @@ func (sConfig *ScheduledFeedConfig) GetScheduledFeeds() (map[string]feeds.Schedu
 	scheduledFeeds := map[string]feeds.ScheduledFeed{}
 	for _, entry := range sConfig.EnabledFeeds {
 		switch entry {
-		case crates.FeedName:
-			scheduledFeeds[entry] = crates.Feed{}
-		case goproxy.FeedName:
-			scheduledFeeds[entry] = goproxy.Feed{}
+		case cargo.FeedName:
+			scheduledFeeds[entry] = cargo.Feed{}
+		case golang.FeedName:
+			scheduledFeeds[entry] = golang.Feed{}
 		case npm.FeedName:
 			scheduledFeeds[entry] = npm.Feed{}
 		case nuget.FeedName:
 			scheduledFeeds[entry] = nuget.Feed{}
 		case pypi.FeedName:
 			scheduledFeeds[entry] = pypi.Feed{}
-		case packagist.FeedName:
-			scheduledFeeds[entry] = packagist.Feed{}
-		case rubygems.FeedName:
-			scheduledFeeds[entry] = rubygems.Feed{}
+		case composer.FeedName:
+			scheduledFeeds[entry] = composer.Feed{}
+		case gem.FeedName:
+			scheduledFeeds[entry] = gem.Feed{}
 		default:
 			err = fmt.Errorf("unknown feed type %v", entry)
 		}
@@ -149,13 +149,13 @@ func strictDecode(input interface{}, out interface{}) error {
 func Default() *ScheduledFeedConfig {
 	config := &ScheduledFeedConfig{
 		EnabledFeeds: []string{
-			crates.FeedName,
-			goproxy.FeedName,
+			cargo.FeedName,
+			composer.FeedName,
+			gem.FeedName,
+			golang.FeedName,
 			npm.FeedName,
 			nuget.FeedName,
-			packagist.FeedName,
 			pypi.FeedName,
-			rubygems.FeedName,
 		},
 		PubConfig: PublisherConfig{
 			Type: stdout.PublisherType,

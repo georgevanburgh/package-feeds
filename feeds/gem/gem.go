@@ -1,4 +1,4 @@
-package rubygems
+package gem
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	FeedName = "rubygems"
+	FeedName = "gem"
 )
 
 var (

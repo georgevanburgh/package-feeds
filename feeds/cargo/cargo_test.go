@@ -1,4 +1,4 @@
-package crates
+package cargo
 
 import (
 	"net/http"
@@ -8,7 +8,7 @@ import (
 	"github.com/ossf/package-feeds/testutils"
 )
 
-func TestCratesLatest(t *testing.T) {
+func TestCargoLatest(t *testing.T) {
 	t.Parallel()
 
 	handlers := map[string]testutils.HttpHandlerFunc{

@@ -1,6 +1,6 @@
 GO ?= go
 
-PROJECT := package-feeds-goproxy
+PROJECT := package-feeds-golang
 BIN := bin
 GOOS   ?= $(shell uname | tr A-Z a-z)
 

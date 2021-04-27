@@ -1,4 +1,4 @@
-package rubygems
+package gem
 
 import (
 	"net/http"

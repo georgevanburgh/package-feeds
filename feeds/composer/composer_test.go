@@ -1,4 +1,4 @@
-package packagist
+package composer
 
 import (
 	"net/http"

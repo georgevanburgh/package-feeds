@@ -24,7 +24,7 @@
       "type": {
         "type": "string",
         "description": "The type of package, this being the `FeedName` of the given package feed",
-        "examples": ["pypi", "npm", "crates", "goproxy"]
+        "examples": ["pypi", "npm", "cargo", "golang"]
       },
       "schema_ver": {
         "type": "string",

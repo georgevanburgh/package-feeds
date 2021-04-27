@@ -1,4 +1,4 @@
-package crates
+package cargo
 
 import (
 	"encoding/json"
@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	FeedName = "crates"
+	FeedName = "cargo"
 )
 
 var (

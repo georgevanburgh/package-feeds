@@ -1,4 +1,4 @@
-package goproxy
+package golang
 
 import (
 	"fmt"

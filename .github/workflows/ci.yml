@@ -34,14 +34,14 @@ jobs:
            cd feeds/npm/
            make verify
 
-    - name: goproxy feeds build
+    - name: golang feeds build
       run: |
-           cd feeds/goproxy/
+           cd feeds/golang/
            make build
 
-    - name: goproxy feeds verify
+    - name: golang feeds verify
       run: |
-           cd feeds/goproxy/
+           cd feeds/golang/
            make verify
 
     # - name: npm feeds docker build

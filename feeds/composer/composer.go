@@ -1,4 +1,4 @@
-package packagist
+package composer
 
 import (
 	"encoding/json"
@@ -10,7 +10,7 @@ import (
 	"github.com/ossf/package-feeds/feeds"
 )
 
-const FeedName = "packagist"
+const FeedName = "composer"
 
 var (
 	updateHost  = "https://packagist.org"

@@ -1,4 +1,4 @@
-package goproxy
+package golang
 
 import (
 	"bufio"
@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	FeedName = "goproxy"
+	FeedName = "golang"
 )
 
 var (
